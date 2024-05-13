@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape_Generator_Genita</title>
+</head>
+<body>
+<script>
+    function genshape() {
+        let int;
+        do {
+            int=prompt("Please enter a number:");
+        } while (isNaN(int));
+        const num=parseInt(int);
+        document.getElementById("output").innerHTML = "Number inputted: " + num + "<br>";
+        if (num % 2 !== 0) {
+            for (let i = num; i >= 1; i--) {
+                for (let j = 1; j <= num; j++) {
+                    document.getElementById("output").innerHTML += i + " ";
+                }
+                document.getElementById("output").innerHTML += "<br>";
+            }
+        } else {
+            for (let i = num; i >= 1; i--) {
+                for (let j = i; j >= 1; j--) {
+                    document.getElementById("output").innerHTML += i + " ";
+                }
+                document.getElementById("output").innerHTML += "<br>";
+            }
+        }
+    }
+</script>
+<h1>!!!Shape Generator!!!</h1>
+<button onclick="genshape()">Start</button>
+<br></br>
+<div id="output"></div>
+</body>
+</html>
